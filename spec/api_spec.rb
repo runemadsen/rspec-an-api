@@ -12,4 +12,14 @@ describe "API" do
 
   end
 
+  describe "POST /products" do
+     
+    it "should save and return with message" do
+      res = HTTParty.post("#{API_URL}/products")
+      json = JSON.parse(res.body)
+      expect(json["message"]).to eq("ok")
+    end
+    
+  end
+
 end
